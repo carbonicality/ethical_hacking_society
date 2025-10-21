@@ -34,7 +34,7 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                background: #09090B;
+                background: rgba(9, 9, 11, 0.6);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 padding: 1rem 2rem;
@@ -124,8 +124,181 @@
                 padding: 2rem;
                 border: 1px solid rgba(255,255,255,0.1);
                 border-top: none;
+                border-bottom: none;
                 min-height:calc(100vh - 140px);
                 position: relative;
+            }
+
+            .content::before,
+            .content::after {
+                content: '+';
+                position:absolute;
+                top: 0;
+                color:rgba(255,255,255,0.3);
+                font-family: 'geist-mono';
+                font-size:1rem;
+                line-height:1;
+                z-index: 1001;
+            }
+
+            .content::before {
+                left: 0;
+                transform: translate(-50%, -50%);
+            }
+
+            .content::after {
+                right: 0;
+                transform:translate(50%,-50%);
+            }   
+
+            .section-td-wrapper {
+                border-top: 1px solid rgba(255,255,255,0.1);
+                position: relative;
+            }
+
+            .section-td-wrapper::before {
+                content: '+';
+                position:absolute;
+                top: 0;
+                left: 0;
+                color: rgba(255,255,255,0.3);
+                font-size: 1rem;
+                line-height: 1;
+                font-family: 'geist-mono';
+                transform:translate(calc(-700px + 50vw - 5px), -50%);
+            }
+
+            .section-td-wrapper::after {
+                content: '+';
+                position:absolute;
+                top:0;
+                right:0;
+                color:rgba(255,255,255,0.3);
+                font-size: 1rem;
+                line-height:1;
+                font-family:'geist-mono';
+                transform:translate(calc(700px - 50vw + 5px), -50%);
+            }
+
+            .section-td {
+                max-width: 1400px;
+                margin: 0 auto;
+                border-left: 1px solid rgba(255,255,255,0.1);
+                border-right: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .td-content {
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-family: 'geist-mono';
+                font-size: 0.85rem;
+                color: rgba(255,255,255,0.5);
+            }
+            
+            .title {
+                margin-top: 2.5rem;
+                margin-left: 2rem;
+            }
+
+            .h-title {
+                font-size: 2.6rem;
+            }
+
+            .h-subtitle {
+                font-size: 1.3rem;
+                color: rgba(255,255,255,0.7);
+                max-width:600px;
+            }
+
+            .q-text {
+                position:absolute;
+                bottom: 9.75rem;
+                right: 10rem;
+                max-width:450px;
+                font-size:0.95rem;
+                line-height:1.6;
+                color:rgba(255,255,255,0.5);
+                font-style:italic;
+                text-align:right;
+                line-height: 1.6;
+                color:rgba(255,255,255,0.5);
+                font-style:italic;
+                text-align:right;
+            }
+
+            .content2 {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 2rem;
+                border: 1px solid rgba(255,255,255,0.1);
+                border-top: none;
+                border-bottom: none;
+                height: 300px;
+                position: relative;
+            }
+
+            .content2::before,
+            .content2::after {
+                content: '+';
+                position:absolute;
+                top: 0;
+                color:rgba(255,255,255,0.3);
+                font-family: 'geist-mono';
+                font-size:1rem;
+                line-height:1;
+                z-index: 1001;
+            }
+
+            .content2::before {
+                left: 0;
+                transform: translate(-50%, -50%);
+            }
+
+            .content2::after {
+                right: 0;
+                transform:translate(50%,-50%);
+            } 
+
+            .content2-wrapper {
+                border-top:1px solid rgba(255,255,255,0.1);
+                position:relative;
+            }
+
+            .content2-wrapper::before {
+                left: 0;
+                transform: translate(calc(-700px + 50vw - 5px), -50%);
+            }
+
+            .content2-wrapper::after {
+                right: 0;
+                transform: translate(calc(-700px -50vw + 5px), -50%);
+            }
+
+            .content2-inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .text-block {
+                flex: 1;
+            }
+
+            .image-block {
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .image-block img {
+                height: 250px;
+                width: 250px;
+                object-fit:contain;
+                border-radius: 8px;
+                border: 1px solid rgba(255,255,255,0.1);
             }
         </style>
     </head>
@@ -145,7 +318,40 @@
             </div>
         </nav>
         <div class="content">
-            <h1>test content</h1>
+            <div class="title">
+                <h1 class="h-title">(ethical) hacking society</h1>
+                <p class="h-subtitle">test sub</p>
+            </div>
+        </div>
+        <div class="section-td-wrapper">
+            <div class="section-td">
+                <div class="td-content">
+                    <span class="td-time">00:00</span>
+                    <span class="td-page">- 0.1</span>
+                </div>
+                <p class="q-text">code unique projects<br> learn new skills whilst doing that, <br> and get rewarded with free stuff!</p>
+            </div>
+        </div>
+        <div class="content2-wrapper">
+            <div class="content2">
+                <div class="content2-inner">
+                    <div class="text-block">
+                        <h1 class="h-title">test title</h1>
+                        <p class="h-subtitle">test sub</p>
+                    </div>
+                    <div class="image-block">
+                        <img src="./images/image.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-td-wrapper">
+            <div class="section-td">
+                <div class="td-content">
+                    <span>This website is open source on GitHub!</span>
+                    <span class="td-page">GitHub commit: </span>
+                </div>
+            </div>
         </div>
     </body>
     <script>
