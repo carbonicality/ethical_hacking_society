@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>(ethical) hacking society</title>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <style>
+            @font-face {
+                src: url('./fonts/normal/Geist-Regular.ttf');
+                font-family: 'geist-reg';
+            }
+
+            @font-face {
+                src: url('./fonts/mono/GeistMono-Regular.ttf');
+                font-family: 'geist-mono';
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'geist-reg';
+                background: #09090B;
+                color: white;
+                padding-top: 70px;
+            }
+
+            .navbar {
+                position:fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: #09090B;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                padding: 1rem 2rem;
+                z-index:1000;
+                border-bottom:1px solid rgba(255,255,255,0.1);
+            }
+
+            .navbar::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 150px;
+                background: radial-gradient(ellipse at center, 
+                    rgba(59, 130, 246, 0.6) 0%, 
+                    rgba(139, 92, 246, 0.4) 30%, 
+                    rgba(59, 130, 246, 0.2) 50%,
+                    transparent 70%);
+                filter: blur(60px);
+                z-index: -1;
+                pointer-events:none;
+            }
+
+            .nav-content {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                color: white;
+                font-size: 1.3rem;
+                font-weight:500;
+                text-decoration:none;
+                letter-spacing:-0.5px;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+                font-family: 'geist-mono';
+                align-items:center;
+            }
+
+            .nav-links a {
+                color: rgba(255,255,255,0.7);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                color:white;
+            }
+
+            .theme-tgl {
+                background: transparent;
+                border: 1px solid rgba(255,255,255,0.2);
+                border-radius: 16px;
+                width: 75px;
+                padding: 0.5rem 0.75rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                transition: all 0.3s ease;
+            }
+
+            .theme-tgl:hover {
+                background: rgba(255,255,255,0.1);
+                border-color: rgba(255,255,255,0.3);
+            }
+
+            .theme-tgl svg {
+                color: rgba(255,255,255,0.7);
+                width: 18px;
+                height: 18px;
+            }
+
+            .content {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 2rem;
+                border: 1px solid rgba(255,255,255,0.1);
+                border-top: none;
+                min-height:calc(100vh - 140px);
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="/" class="logo">(ethical) hacking society</a>
+                <div class="nav-links">
+                    <a href="#about">about</a>
+                    <a href="#projects">projects</a>
+                    <a href="#blog">blog</a>
+                    <a href="#join">join</a>
+                    <button class="theme-tgl" id="themeTgl">
+                        <i data-lucide="moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <h1>test content</h1>
+        </div>
+    </body>
+    <script>
+        lucide.createIcons();
+    </script>
+</html>
