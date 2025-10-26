@@ -6,6 +6,7 @@
         <title>(ethical) hacking society</title>
         <script src="https://unpkg.com/lucide@latest"></script>
         <style>
+            /* 26/10/25 -  i realised google fonts has geist but whatever */
             @font-face {
                 src: url('./fonts/normal/Geist-Regular.ttf');
                 font-family: 'geist-reg';
@@ -236,51 +237,64 @@
                 border-top: none;
                 border-bottom: none;
                 height: 300px;
-                position: relative;
-            }
-
-            .content2::before,
-            .content2::after {
-                content: '+';
-                position:absolute;
-                top: 0;
-                color:rgba(255,255,255,0.3);
-                font-family: 'geist-mono';
-                font-size:1rem;
-                line-height:1;
-                z-index: 1001;
+                position:relative;
+                overflow:hidden;
             }
 
             .content2::before {
+                content: '+';
+                position:absolute;
+                top: 0;
                 left: 0;
+                color:rgba(255,255,255,0.3);
+                font-family: 'geist-mono';
+                font-size: 1rem;
+                line-height: 1;
+                z-index: 1001;
                 transform: translate(-50%, -50%);
             }
 
             .content2::after {
-                right: 0;
-                transform:translate(50%,-50%);
-            } 
+                content: '';
+                position:absolute;
+                top:0;
+                left: 0;
+                width:100%;
+                height: 100%;
+                background:
+                    radial-gradient(circle at 20% 30%, rgba(27, 34, 42, 1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(15, 18, 22, 0.5) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 70%, rgba(27, 34, 42, 1) 0%, transparent 50%),
+                    radial-gradient(circle at 70% 80%, rgba(15, 18, 22, 0.5) 0%, transparent 50%);
+                filter: blur(90px);
+                z-index: 0;
+                animation: gradShift 15s ease-in-out infinite;
+            }
 
             .content2-wrapper {
                 border-top:1px solid rgba(255,255,255,0.1);
                 position:relative;
             }
 
-            .content2-wrapper::before {
-                left: 0;
-                transform: translate(calc(-700px + 50vw - 5px), -50%);
-            }
-
-            .content2-wrapper::after {
-                right: 0;
-                transform: translate(calc(-700px -50vw + 5px), -50%);
-            }
-
             .content2-inner {
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 2rem;
+                justify-content:space-between;
+                align-items:flex-start;
+                gap:2rem;
+                position:relative;
+                z-index:1;
+            }
+
+            .content2-inner::before {
+                content:'+';
+                position:absolute;
+                top:-2rem;
+                right:-2rem;
+                color:rgba(255,255,255,0.3);
+                font-family:'geist-mono';
+                font-size:1rem;
+                line-height:1;
+                z-index:1001;
             }
 
             .text-block {
@@ -300,6 +314,81 @@
                 border-radius: 8px;
                 border: 1px solid rgba(255,255,255,0.1);
             }
+            
+            .scroll-sec {
+                overflow:hidden;
+            }
+
+            .scrolltainer {
+                padding: 1.5rem 0;
+                overflow:hidden;
+            }
+
+            .scroll-con {
+                display: flex;
+                white-space:nowrap;
+                animation:marquee 30s linear infinite;
+                font-family:'geist-mono';
+                font-size: 0.9rem;
+                color:rgba(255,255,255,0.4);
+                letter-spacing:2px;
+            }
+
+            .scroll-con span {
+                padding-right: 2rem;
+            }
+            
+            @keyframes marquee {
+                0% {
+                    transform:translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .footer-wpr {
+                position:relative;
+            }
+
+            .footer-wpr::before {
+                content: '';
+                position:absolute;
+                bottom: -50%;
+                left: 50%;
+                transform:translateX(-50%);
+                width: 80%;
+                height: 30px;
+                background:radial-gradient(ellipse at center,rgba(59,130,246,0.6) 0%, rgba(139,92,246,0.4) 30%, rgba(59,130,246,0.2) 50%,transparent 70%); /* long ahh line */
+                filter: blur(60px);
+                z-index: -1;
+                pointer-events:none;
+            }
+
+            .grid-bg {
+                position:absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 60%;
+                background-image: linear-gradient(rgba(139,92,246,0.15) 1px,transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.15) 1px, transparent 1px);
+                background-size: 50px 50px;
+                z-index: 0;
+                mask-image: linear-gradient(to top, black 0%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+                pointer-events:none;
+            }
+
+            @keyframes gradShift {
+                0%, 100% {
+                    opacity: 0.8;
+                    transform: scale(1) rotate(0deg);
+                }
+                50% {
+                    opacity: 0.6;
+                    transform:scale(1.1) rotate(5deg);
+                }
+            }
         </style>
     </head>
     <body>
@@ -318,9 +407,10 @@
             </div>
         </nav>
         <div class="content">
+            <div class="grid-bg"></div>
             <div class="title">
                 <h1 class="h-title">(ethical) hacking society</h1>
-                <p class="h-subtitle">test sub</p>
+                <p class="h-subtitle">(ethical) hacking society - an amalgamation of idk something</p>
             </div>
         </div>
         <div class="section-td-wrapper">
@@ -336,8 +426,8 @@
             <div class="content2">
                 <div class="content2-inner">
                     <div class="text-block">
-                        <h1 class="h-title">test title</h1>
-                        <p class="h-subtitle">test sub</p>
+                        <h1 class="h-title">what is this?</h1>
+                        <p class="h-subtitle">placeholder but tbh idk either bro</p>
                     </div>
                     <div class="image-block">
                         <img src="./images/image.png">
@@ -345,11 +435,21 @@
                 </div>
             </div>
         </div>
-        <div class="section-td-wrapper">
+        <div class="section-td-wrapper scroll-sec">
+            <div class="section-td">
+                <div class="scrolltainer">
+                    <div class="scroll-con">
+                        <span>coding • rewards • intelligence • technology • coding • rewards • intelligence • technology •</span>
+                        <span>coding • rewards • intelligence • technology • coding • rewards • intelligence • technology •</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-td-wrapper footer-wpr">
             <div class="section-td">
                 <div class="td-content">
                     <span>This website is open source on GitHub!</span>
-                    <span class="td-page">GitHub commit: </span>
+                    <span class="td-page">GitHub commit:</span>
                 </div>
             </div>
         </div>
