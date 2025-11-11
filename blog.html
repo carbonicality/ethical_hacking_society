@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>(ethical) hacking society</title>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="index.html" class="logo">(ethical) hacking society</a>
+                <div class="nav-links">
+                    <a href="about.html">about</a>
+                    <a href="projects.html">projects</a>
+                    <a href="blog.html">blog</a>
+                    <a href="join.html">join</a>
+                    <button class="theme-tgl" id="themeTgl" onclick="redirect()">
+                        <i data-lucide="code"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="content" style="min-height:350px !important;">
+            <div class="grid-bg"></div>
+            <div class="title">
+                <h1 class="h-title">about us</h1>
+                <p class="h-subtitle">who we are and what we do</p>
+            </div>
+        </div>
+        <div class="content2-wrapper">
+            <div style="max-width: 1400px;margin: 0 auto;border: 1px solid rgba(255,255,255,0.1);border-top:none;position:relative;">
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <span class="blog-tag">blog post</span>
+                        <h2 class="blog-title">the first blog post!</h2>
+                        <div class="blog-meta">
+                            <span>if i'm gonna be honest this is just a placeholder, but REMEMBER THIS AS THE FIRST BLOG POST!!!! (technically)</span>
+                        </div>
+                        <p class="blog-exc">remember this as the first blogpost</p>
+                        <div class="blog-auth">
+                            <span>by someone probably</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+        lucide.createIcons();
+        
+        function redirect() {
+            window.location.href = 'https://github.com/carbonicality/ethical_hacking_society/';
+        }
+    </script>
+</html>
